@@ -1,0 +1,28 @@
+{
+  "name": "ut3rr",
+  "version": "0.0.0",
+  "description": "ut3rr on",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.13.3",
+    "socket.io": "~1.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KaveenR/ut3rr"
+  },
+  "keywords": [
+    "chat",
+    "program"
+  ],
+  "author": "Kaveen Rodrigo",
+  "license": "GNU GPL",
+  "bugs": {
+    "url": "https://github.com/KaveenR/ut3rr/issues"
+  }
+}
