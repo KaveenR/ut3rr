@@ -16,7 +16,9 @@ io.on('connection', function(socket){
   socket.on('join_room', function(msg){
     socket.join(msg);
     socket.room = msg
-    rooms.push(msg);
+    if (rooms.indexOf(msg)!=-1){
+      rooms.push(msg);
+    }
     io.to(socket.id).emit("joined",msg)
   });
 

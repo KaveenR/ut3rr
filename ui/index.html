@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StringGame</title>
+  <title>Ut3err</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="main.css">
@@ -11,7 +11,7 @@
       <div class="container">
         <div class="panel panel-default main_panel" ng-if="!in">
           <div class="panel-body">
-            <h1>String Game</h1>
+            <h1>Ut3err</h1>
             <br>
             <input type="text" class="form-control" placeholder="Room name" ng-model="room.rname">
             <br>
@@ -21,15 +21,18 @@
         <div class="panel panel-default main_panel" ng-if="!in">
           <div class="panel-body">
             <h1>Latest Rooms</h1>
-            <ul>
-              <li ng-repeat="x in rooms">{{x}}</li>
+            <p ng-if="rooms.length == 0">No Rooms To Be Displayed</p>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="x in rooms">
+              <button type="button" class="btn btn-primary" ng-click="quickjoin('{{x}}')">Join</button>{{x}}
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div ng-if="in">
-        <h1>StringGame</h1>
-        <h4>Room ID : {{room.rname}}</h4>
+        <h1>Ut3err</h1>
+        <h4>{{room.rname}}</h4>
         <span ng-repeat="x in letters track by $index" style="letter-spacing:-3px;font-size:250%">
             <font color="{{x.ucolor}}">{{ x.split('"').join('') }}</font>
         </span>

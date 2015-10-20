@@ -3,7 +3,7 @@ app.controller('mnCtrl', function($scope) {
   $scope.in = false;
   var socket = io();
   $scope.room = {};
-  $scope.rooms = {};
+  $scope.rooms = [];
   $scope.room.rname = "";
   $scope.room.users={};
   $scope.letters = [];
@@ -40,7 +40,7 @@ app.controller('mnCtrl', function($scope) {
 
   socket.on('rooms', function(msg){
     $scope.rooms = msg;
-    
+
     $scope.$apply();
   })
 
@@ -48,6 +48,10 @@ app.controller('mnCtrl', function($scope) {
     socket.emit('join_room', $scope.room.rname);
     $scope.in = true;
     $scope.$apply();
+  }
+  $scope.quickjoin = function(room){
+    $scope.room.rname = room;
+    $scope.join();
   }
 
   $scope.init = function(){
