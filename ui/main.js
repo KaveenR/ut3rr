@@ -47,7 +47,16 @@ app.controller('mnCtrl', function($scope) {
   $scope.join = function(){
     socket.emit('join_room', $scope.room.rname);
     $scope.in = true;
+    $scope.greet();
     $scope.$apply();
+  }
+  $scope.greet = function(){
+    var message = "Welcome To Utt3rr, Nothing Fancy, Just Use Your keyboard";
+    for(i in message){
+      var l = new String(message[i]);
+      l.ucolor = '#'+Math.random().toString(16).substr(-6);
+      $scope.letters.push(l)
+    }
   }
   $scope.quickjoin = function(room){
     $scope.room.rname = room;
